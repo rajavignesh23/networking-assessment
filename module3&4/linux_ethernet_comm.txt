@@ -1,0 +1,15 @@
+The Linux kernel treats every Ethernet interface as a struct net_device. This structure is the core software representation of a physical or virtual network port. It acts as an anchor point for higher-level constructs like IP addresses, routing tables, and bridges.
+
+Registration: Drivers for Ethernet hardware (like Intel igb or Amazon ena) register a net_device with the kernel during the probing phase.
+Naming: Interfaces are traditionally named ethX, though modern systems use "Predictable Network Interface Names" based on hardware location (e.g., enp3s0).
+
+State Management: The kernel distinguishes between the Administrative State (whether the user set it up or down) and the Operational State (whether a carrier/link is physically detected).
+
+Ethernet drivers bridge the gap between the kernel's generic networking stack and the specific hardware registers of a Network Interface Card (NIC).
+
+Data Path: Rx (Receive) and Tx (Transmit)
+Transmission (Tx): When the kernel needs to send a packet, it calls the driver’s ndo_start_xmit function. The driver maps the packet data (stored in a sk_buff or "socket buffer") to a hardware-accessible DMA memory region and notifies the NIC to send.
+
+Reception (Rx): Modern drivers use the NAPI (New API) framework to handle high-speed traffic. Instead of a single interrupt for every packet—which would overwhelm the CPU—the driver switches to a polling mode under heavy load to process "budgets" of packets efficiently.
+
+Ethernet devices rarely operate alone; they connect to a PHY (Physical Layer) chip that handles the actual electrical signaling over the cable. The Linux kernel provides a PHY Abstraction Layer to manage link speeds, auto-negotiation, and state changes (e.g., cable plugged/unplugged) independently of the main MAC driver.
