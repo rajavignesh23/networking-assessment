@@ -1,0 +1,20 @@
+IP Address    Class   Private/Public
+192.168.10.5  C       Private
+172.20.15.1   B       Private
+8.8.8.8       A       Public
+
+
+How NAT Handles Private IPs
+Private IP addresses are not "routable" on the public internet. If a device has an IP address like 192.168.10.5, it can’t just talk directly to a website. The website has no way of knowing where to send the information it’s sending in reply, because there are millions of other devices using the same IP address.
+
+NAT acts as a "translator" at router. 
+
+ Request: device (192.168.10.5) sends a message to the internet (Google at 8.8.8.8).
+
+Translation: When the message goes through the router, the NAT service replaces the Private IP address of the device (192.168.10.5) with the Public IP address of the router.
+
+Record: The router keeps a note in its NAT Table as "192.168.10.5 asked for this website "
+
+Response: The website sends information back towards the router.
+
+Delivery: The router checks its NAT table and forward to the device
