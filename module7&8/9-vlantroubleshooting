@@ -1,0 +1,5 @@
+Devices in different VLANs cannot communicate because VLANs are separate networks. A Layer 3 device (router or L3 switch) is required for inter-VLAN routing. Configure router-on-a-stick with trunk port and subinterfaces to enable communication.
+
+check vlan exist : show vlan brief
+check port assignment : show running-config interface fa0/1
+						show running-config interface fa0/2
