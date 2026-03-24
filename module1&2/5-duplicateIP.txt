@@ -1,0 +1,6 @@
+When duplicate IP addresses are configured in the same network,  devices with same IP respond to ARP requests for that IP with different MAC addresses. This causes ARP table inconsistency which can cause
+
+Packets delivery to the wrong device
+Communication fails
+Ping may alternate between devices or time out
+Systems may show duplicate IP address warnings

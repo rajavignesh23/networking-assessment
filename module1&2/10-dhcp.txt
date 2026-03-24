@@ -1,0 +1,19 @@
+DHCP automatically assigns IP using a 4-step handshake (DORA)
+
+1. Discover
+   Client has no IP →  broadcast message: “Any DHCP server available?”
+
+2. Offer
+   DHCP server replies with:
+	Available IP address
+	Subnet mask
+	Gateway
+	DNS
+	Lease time
+
+3. Request
+   Client selects one offer and broadcast “I request this IP” 
+
+
+4. Acknowledge (ACK)
+   Server confirms  assigning IP and Client configures network settings

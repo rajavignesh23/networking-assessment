@@ -1,0 +1,39 @@
+vignesh@vignesh-vm:~$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.96.152  netmask 255.255.255.0  broadcast 192.168.96.255
+        inet6 fe80::3393:5eb6:87f3:3de  prefixlen 64  scopeid 0x20<link>
+        inet6 2409:40f4:2057:efcb:a3d7:8291:55e1:b3ae  prefixlen 64  scopeid 0x0<global>
+        inet6 2409:40f4:2057:efcb:2a0e:51f8:de46:df1d  prefixlen 64  scopeid 0x0<global>
+        ether 08:00:27:3e:7f:ac  txqueuelen 1000  (Ethernet)
+        RX packets 224  bytes 76566 (76.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 330  bytes 44421 (44.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+Interface name : enp0s3
+
+flags :
+	UP → interface enabled
+	RUNNING → link active
+	BROADCAST → supports broadcast
+	MULTICAST → supports multicast
+
+mtu: (Maximum Transmission Unit) 1500 → max packet size (bytes)
+
+inet (IPv4 address)
+
+netmask (subnet mask) 
+
+broadcast (broadcast address)
+
+inet6 (IPv6 address)
+
+ether (MAC address)
+08:00:27:4e:66:a1 → physical address
+
+txqueuelen
+buffer size for outgoing packets
+
+RX → received packets
+TX → transmitted packets
