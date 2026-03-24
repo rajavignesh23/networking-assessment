@@ -1,0 +1,31 @@
+given ip : 192.168.1.0/24
+
+to do : create 4 subnets
+
+Bits to borrow , 2^n = 4(subnets) -> n = 2
+
+new subnet mask = /24 + /2 = /26 (255.255.255.192)
+
+Block size :  259 - 192 = 64
+
+
+
+Subnet 1 (192.168.1.0 - 192.168.1.63) 64 block size
+Network:   192.168.1.0/26
+Usable:    192.168.1.1 – 192.168.1.62
+Broadcast: 192.168.1.63
+
+Subnet 2
+Network:   192.168.1.64/26
+Usable:    192.168.1.65 – 192.168.1.126
+Broadcast: 192.168.1.127
+
+Subnet 3
+Network:   192.168.1.128/26
+Usable:    192.168.1.129 – 192.168.1.190
+Broadcast: 192.168.1.191
+
+Subnet 4
+Network:   192.168.1.192/26
+Usable:    192.168.1.193 – 192.168.1.254
+Broadcast: 192.168.1.255
