@@ -4,7 +4,6 @@ PC2: 10.0.0.3
 PC3: 10.0.0.66
 PC4: 10.0.0.67
 
-
 given ip : 10.0.0.0/24
 
 to do : create 4 subnets
