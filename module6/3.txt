@@ -1,17 +1,42 @@
+
 PC1: 10.0.0.2
 PC2: 10.0.0.3
-Gateway: 10.0.0.1 (Router G0/0)
-
 PC3: 10.0.0.66
 PC4: 10.0.0.67
-Gateway: 10.0.0.65 (Router G0/1)
+
+
+given ip : 10.0.0.0/24
+
+to do : create 4 subnets
+
+Bits to borrow , 2^n = 4(subnets) -> n = 2
+
+new subnet mask = /24 + 2 = /26 (255.255.255.192)
+
+Block size : 256 - 192 = 64
+
+Subnet 1 (10.0.0.0 - 10.0.0.63) 64 block size
+Network:   10.0.0.0/26
+Usable:    10.0.0.1 – 10.0.0.62
+Broadcast: 10.0.0.63
+
+Subnet 2
+Network:   10.0.0.64/26
+Usable:    10.0.0.65 – 10.0.0.126
+Broadcast: 10.0.0.127
+
+Subnet 3
+Network:   10.0.0.128/26
+Usable:    10.0.0.129 – 10.0.0.190
+Broadcast: 10.0.0.191
+
+Subnet 4
+Network:   10.0.0.192/26
+Usable:    10.0.0.193 – 10.0.0.254
+Broadcast: 10.0.0.255
 
 
 
-interface g0/0
-ip address 10.0.0.1 255.255.255.192
-no shutdown
 
-interface g0/1
-ip address 10.0.0.65 255.255.255.192
-no shutdown
+
+
